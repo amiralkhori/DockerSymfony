@@ -1,0 +1,44 @@
+version: '3.6'
+
+services:
+  server:
+    container_name: nginx
+    build:
+      context: .
+      dockerfile: Docker/nginx.dockerfile
+    ports:
+      - '8000:80'
+    depends_on:
+      - php
+      - postgres
+
+  php:
+    container_name: php
+    build:
+      context: .
+      dockerfile: Docker/php.dockerfile
+
+  postgres:
+    container_name: postgres
+    restart: always
+    image: postgres:latest
+    env_file:
+      - database/database.env
+    volumes:
+      - ./database:/var/lib/postgresql
+    ports:
+      - 5432:5432
+
+  composer:
+    container_name: composr
+    build:
+      context: Docker
+      dockerfile: composer.dockerfile
+    volumes:
+    - ./src:/var/www/html
+
+  npm:
+    container_name: node
+    image: node:14
+    working_dir: /var/www/html
+    entrypoint: ["npm"]
