@@ -5,9 +5,11 @@ services:
     container_name: nginx
     build:
       context: .
-      dockerfile: Docker/nginx.dockerfile
+      dockerfile: docker/nginx.dockerfile
     ports:
       - '8000:80'
+    volumes:
+      - ./src:/var/www/html
     depends_on:
       - php
       - postgres
@@ -16,7 +18,9 @@ services:
     container_name: php
     build:
       context: .
-      dockerfile: Docker/php.dockerfile
+      dockerfile: docker/php.dockerfile
+    volumes:
+      - ./src:/var/www/html
 
   postgres:
     container_name: postgres
@@ -29,16 +33,17 @@ services:
     ports:
       - 5432:5432
 
-  composer:
-    container_name: composr
-    build:
-      context: Docker
-      dockerfile: composer.dockerfile
-    volumes:
-    - ./src:/var/www/html
+#  composer:
+#    container_name: composr
+#    build:
+#      context: docker
+#      dockerfile: composer.dockerfile
+#    entrypoint: "composer install"
+#    volumes:
+#      - ./src:/var/www/html
 
-  npm:
-    container_name: node
-    image: node:14
-    working_dir: /var/www/html
-    entrypoint: ["npm"]
+#  npm:
+#    container_name: node
+#    image: node:14
+#    working_dir: /var/www/html
+#    entrypoint: ["npm"]
