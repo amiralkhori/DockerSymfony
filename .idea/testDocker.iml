@@ -108,6 +108,10 @@
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/symfony/property-access" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/symfony/options-resolver" />
       <excludeFolder url="file://$MODULE_DIR$/src/vendor/symfony/monolog-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/nelmio/cors-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/fig/link-util" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/api-platform/core" />
+      <excludeFolder url="file://$MODULE_DIR$/src/vendor/willdurand/negotiation" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

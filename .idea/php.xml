@@ -104,6 +104,10 @@
       <path value="$PROJECT_DIR$/src/vendor/symfony/property-access" />
       <path value="$PROJECT_DIR$/src/vendor/symfony/options-resolver" />
       <path value="$PROJECT_DIR$/src/vendor/symfony/monolog-bundle" />
+      <path value="$PROJECT_DIR$/src/vendor/nelmio/cors-bundle" />
+      <path value="$PROJECT_DIR$/src/vendor/fig/link-util" />
+      <path value="$PROJECT_DIR$/src/vendor/api-platform/core" />
+      <path value="$PROJECT_DIR$/src/vendor/willdurand/negotiation" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />
